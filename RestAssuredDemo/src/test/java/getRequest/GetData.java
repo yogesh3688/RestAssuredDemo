@@ -10,8 +10,9 @@ public class GetData {
 	public void testResponseCode() {
 		Response resp = RestAssured.get("http://parabank.parasoft.com/parabank/services/bank/customers/12212/");
 		int code = resp.getStatusCode();
-		System.out.println("Status code is "+code);
 		
+		System.out.println("Status code is "+code);
+		System.out.println(resp.getHeaders());
 		String data = resp.asString();
 		System.out.println(data);
 	}
